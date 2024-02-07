@@ -1,0 +1,452 @@
+@import './abstracts/variables';
+@import './mixins/breakpoints';
+@import './abstracts/common';
+// start of the menubar section
+.menubar{
+    padding: 15px;
+    background-color:$color2 ;
+    color:$color1; 
+    text-align: center;
+    .menu-wrap{
+        @include media-min-lg{
+            width:80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  
+        }
+        .logo{
+            a{
+                color:$color1; 
+                font-size: 28px;
+                &:hover{
+                    color: $color6;
+                }
+                @include media-min-lg{
+                    font-size: 35px;
+                }
+            }
+        }
+        .menus{
+            ul{
+                padding: 10px 0px;
+                @include media-min-lg{
+                    display: flex;
+                }
+                li{
+                    border: 1px solid $color5;
+                    padding: 10px 0px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    @include media-min-lg{
+                        border: none;
+                        padding-right: 30px;
+                    }
+                    &:hover{
+                        color: $color6;
+                    } 
+                    a{
+                        color: $color6;
+                        font-size: 18px;
+                        // @include media-min-lg{
+                            border: 2px solid $color6;
+                            padding: 8px 15px;
+                            border-radius: 50px;
+                        // }
+                        &:hover{
+                            background-color: $color6;
+                            color: $color1;
+                        }
+                    }
+                } 
+                    
+            }
+        }
+    }
+}
+// end of the menubar section
+// start of the banner section
+.banner{
+    padding: 15px;
+    background:linear-gradient(170deg,$color3 64%,$color1 30%);
+    color: $color1;
+    // text-align: center;
+    .banner-wrap{
+        @include media-min-lg{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5rem 0px;
+        }
+        .banner-cont{
+            @include media-min-lg{
+            text-align: left;
+            width: 50%;
+            }
+            h2{
+                @include media-min-lg{
+                    font-size: 36px; 
+                }
+            }
+            button{
+                border: none;
+                border-radius: 50px;
+                color: $color2;
+                background-color: $color1;
+                padding: 10px;
+                margin: 2em 0px;
+                @include media-min-lg{
+                    font-size: 18px;
+                    padding: 20px;
+                }
+                &:hover{
+                    color: $color1;
+                    background-color: $color5;
+                }
+            }
+        }
+        .banner-img{
+            img{
+                width: 100%;
+                @include media-min-lg{
+                    height: 420px;
+                }
+            }
+            @include media-min-lg{
+                width: 50%;
+            }
+        }
+    }
+}
+// end of the banner section
+.marketing{
+    padding: 15px;
+    @include media-min-lg{
+        width: 38%;
+        margin: 10% auto;
+        text-align: center;
+    }
+    h2{
+        padding: 10px 0px;
+        text-align: justify;
+        font-size: 20px;
+        @include media-min-lg{
+            font-size: 28px;
+            width: 80%;
+            line-height: 1.5em;
+            text-align: left;
+        }
+    }
+    p{
+        padding: 10px 0px;
+        text-align: justify;
+        font-size: 20px;
+        color:$color7;
+        a{
+            color: $color7;
+            &:hover{
+                color: $color6;
+            }
+        }
+    }
+}
+// start of office section
+.office{
+    padding: 15px;
+    @include media-min-lg{
+        width: 40%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    img{
+        width:100%;
+    }
+}
+// end of office section
+// start of the slider section
+.slider{
+    padding:15px;
+    background-color: $color4;
+    @include media-min-lg{
+        padding:4em 0px;
+    }
+    .slider-wrap{
+        overflow: hidden;
+        .slider-content{
+            text-align: center;
+            padding: 2rem 0px;
+            @include media-min-lg{
+                width: 40%;
+                margin: 0 auto;
+            }
+            h2{
+                font-size: 30px;
+                text-align: left;
+                @include media-min-lg{
+                    font-size: 36px;
+                }
+            }
+        }
+        .slider-trans{
+            width: 500%;
+            left: 0;
+            margin: 0;
+            position:relative;
+            animation:carousal 20s infinite ;
+            @keyframes carousal{
+               0%{
+                    left: 0;
+                } 
+                10%{
+                    left: 0;
+               }
+               15%{
+                    left:-100%;
+                }
+                25%{
+                    
+                    left:-100%;
+                }
+               35%{
+                    left:-200%;
+                
+                }
+                40%{
+                   left:-200%;
+                   
+                }
+                60%{
+                   left:-300%;
+                   
+                }
+                80%{
+
+                   left:-300%;
+                }
+                90%{
+                    left:-400%;
+                }
+               100%{
+                   
+                   left:-400%;
+            }
+            }
+
+            @include media-min-lg{
+                display: flex;
+                justify-content: space-between;
+            }
+            .slider-box{
+                width: 20%;
+                float: left;
+                position: relative;
+                margin: 20px 0px;
+                img{
+                    width: 100%;
+                    height: 300px;
+                    @include media-min-lg{
+                        height: 500px;
+                    }
+                }
+               .slider-charvon{
+                   position: absolute;
+                   bottom: 20%;
+                   background-color: $color1;
+                   border:black;
+                   padding: 10px;
+                   width:90%;
+                   margin-left: 2.5%;
+                    h4{
+                        color: $color7;
+                    }
+                    h2{
+                        color: $color2;
+                    }
+                    .arrow{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background-color: $color2;
+                        position: absolute;
+                        right: 4%;
+                        top: 20%;
+                        
+                        i{
+                            color: $color1;
+                            padding: 12px 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// end of the slider section
+// start of the label section
+.label{
+    padding:4rem 15px;
+    .label-wrap{
+        @include media-min-lg{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content:space-between ;
+            align-items: center;
+        }
+        .label-img{
+            img{
+                width: 100%;
+                @include media-min-lg{
+                    height: 400px;
+                }
+            }
+            @include media-min-lg{
+                width: 50%;
+            }
+        }
+        .label-content{
+            text-align: center;
+            @include media-min-lg{
+                text-align: left;
+                width: 50%;
+                position: relative;
+            }
+
+            h5{
+                color: $color7;
+                font-size: 18px;
+                font-weight: 300;
+                @include media-min-lg{
+                    padding-bottom: 10%;
+                }
+            }
+            h2{
+                text-align: justify;
+                padding: 15px 0px;
+                color: $color7;
+            }
+            .quote{
+                color: rgb(235, 229, 229);
+                font-size: 4rem;
+                position:absolute ;
+                top:40%;
+                z-index:-1;
+                left: 20px;
+            }
+        }
+    }
+}
+// end of the label section
+// start of the footer section
+.footer{
+    padding: 15px;
+    background-color: $color5;
+    color: $color7;
+    @include media-min-lg{
+        padding:1em 0;
+    }
+    .footer-wrap1{
+        @include media-min-lg{
+            display: flex;
+            justify-content: space-between; 
+            font-size: 16px;
+            width: 80%;
+            margin: 10% auto;
+        }
+        .footer-content{
+            color:$color1;
+            @include media-min-lg{
+                width: 30%;
+            }
+        }
+        .contact{
+            padding: 10px 0px;
+            font-size: 18px;
+            @include media-min-lg{
+                width: 30%;
+            }
+            h3{
+                padding-bottom: 20px ;
+            }
+            span{
+                padding: 10px ;
+            }
+            a{
+                color: $color7;
+                padding: 10px;
+                &:hover{
+                    color: $color6;
+                }
+            }
+           
+        }
+        .studio{
+            padding: 10px 0px;
+            font-size: 18px;
+            @include media-min-lg{
+                width: 30%;
+            }
+            h3{
+                padding-bottom: 20px ;
+            }
+            p{
+                padding-top: 20px;
+            }
+        }
+    }
+    .footer-wrap2{
+        @include media-min-lg{
+            display: flex;
+            justify-content: space-between;  
+            // align-items: center; 
+            width: 80%;
+            margin: 10% auto;
+            font-size: 18px;
+        }
+        .copy{
+            padding: 10px 0px;
+            font-size: 18px;
+            @include media-min-lg{
+                width: 30%;
+                font-size: 16px;
+                padding: 0;
+            }
+            a{
+                color: $color7;
+                font-size: 18px;
+                @include media-min-lg{
+                    text-align: center;
+                }
+                &:hover{
+                    color: $color6;
+                }
+            }
+        }
+        .stories{
+            font-size: 18px;
+            @include media-min-lg{
+                width: 30%;
+            }
+            a{
+                &:hover{
+                    color: $color6;
+                }   
+                padding: 10px 10px 10px 0px ;
+                color: $color7;
+            }
+        }
+        .icons{
+            @include media-min-lg{
+                width: 30%;
+            }
+            i{
+                font-size: 18px;
+                padding: 10px 10px 10px 0px ;
+                color: $color7;
+            }
+        }
+    }
+}
+// end of the footer section
